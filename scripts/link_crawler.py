@@ -1,10 +1,16 @@
+try:
+    import urllib.request as urllib2
+    import urllib.parse as urlparse
+    import urllib.robotparser as robotparser
+    import queue as Queue
+except ImportError:
+    import urllib2
+    import urlparse
+    import robotparser
+    import Queue
 import re
-import urlparse
-import urllib2
 import time
 from datetime import datetime
-import robotparser
-import Queue
 
 
 def link_crawler(seed_url, link_regex=None, delay=5, max_depth=-1, max_urls=-1,
@@ -128,7 +134,8 @@ def get_links(html):
     # a regular expression to extract all links from the webpage
     webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
     # list of all links from the webpage
-    return webpage_regex.findall(html)
+    html_str = html.decode("utf-8")
+    return webpage_regex.findall(html_str)
 
 
 if __name__ == '__main__':
