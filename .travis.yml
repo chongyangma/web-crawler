@@ -5,6 +5,7 @@ python:
 
 install:
   - pip install lxml
+  - pip install cssselect
 
 script:
   - python tests.py
