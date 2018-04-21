@@ -1,0 +1,12 @@
+language: python
+
+python:
+  - "2.7"
+  - "3.6"
+
+install:
+  - pip install lxml
+  - pip install cssselect
+
+script:
+  - python tests.py
