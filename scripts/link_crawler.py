@@ -14,7 +14,7 @@ import datetime
 from downloader import Downloader
 
 
-def link_crawler(seed_url, link_regex=None, delay=5, max_depth=-1, max_urls=-1,
+def link_crawler(seed_url, link_regex=None, delay=1, max_depth=-1, max_urls=-1,
                  user_agent='wswp', proxies=None, num_retries=1, scrape_callback=None, cache=None):
     """Crawl from the given seed URL following links matched by link_regex
     """
