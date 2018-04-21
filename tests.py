@@ -1,15 +1,14 @@
 import sys
 sys.path.insert(0, './scripts')
 
-# import link_crawler
-# import scrape_callback
-# from scrape_callback import ScrapeCallback
+import link_crawler
+import scrape_callback
+from scrape_callback import ScrapeCallback
 
 if __name__ == '__main__':
-    print("Done")
-    # link_crawler.link_crawler('http://example.webscraping.com',
-    #                           '/(places/default/index|places/default/view)',
-    #                           delay=1, num_retries=1, max_depth=1, user_agent='GoodCrawler')
-    # scrape_callback.link_crawler('http://example.webscraping.com/',
-    #                              '/(places/default/index|places/default/view)',
-    #                              scrape_callback=ScrapeCallback())
+    link_crawler.link_crawler('http://example.webscraping.com',
+                              '/(places/default/index|places/default/view)',
+                              delay=1, num_retries=1, max_depth=1, user_agent='GoodCrawler')
+    scrape_callback.link_crawler('http://example.webscraping.com/',
+                                 '/(places/default/index|places/default/view)',
+                                 scrape_callback=ScrapeCallback())
