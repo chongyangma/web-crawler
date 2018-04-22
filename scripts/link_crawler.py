@@ -12,6 +12,7 @@ import re
 import time
 import datetime
 from downloader import Downloader
+import six
 
 
 def link_crawler(seed_url, link_regex=None, delay=1, max_depth=-1, max_urls=-1,
@@ -90,7 +91,9 @@ def get_links(html):
     # a regular expression to extract all links from the webpage
     webpage_regex = re.compile('<a[^>]+href=["\'](.*?)["\']', re.IGNORECASE)
     # list of all links from the webpage
-    html_str = html.decode("utf-8")
+    html_str = html
+    if not isinstance(html, six.string_types):
+        html_str = html.decode("utf-8")
     return webpage_regex.findall(html_str)
 
 
