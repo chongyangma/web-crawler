@@ -12,4 +12,4 @@ install:
 script:
   - python tests.py
   - cd scripts
-  - time python threaded_test.py
+  - time python threaded_test.py 5
