@@ -11,9 +11,6 @@ install:
 
 script:
   - python tests.py
-  - rm /var/lib/mongodb/mongod.lock
-  - mongod --repair
-  - service mongodb start
   - cd scripts
   - python alexa_fn.py
   - time python threaded_test.py 5
