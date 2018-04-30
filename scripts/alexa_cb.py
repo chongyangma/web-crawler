@@ -3,8 +3,8 @@
 import csv
 from zipfile import ZipFile
 from StringIO import StringIO
-from mongo_cache import MongoCache
-
+# from mongo_cache import MongoCache
+from disk_cache import DiskCache
 
 class AlexaCallback:
     def __init__(self, max_urls=1000):
@@ -14,7 +14,7 @@ class AlexaCallback:
     def __call__(self, url, html):
         if url == self.seed_url:
             urls = []
-            cache = MongoCache()
+            cache = DiskCache()
             with ZipFile(StringIO(html)) as zf:
                 csv_filename = zf.namelist()[0]
                 for _, website in csv.reader(zf.open(csv_filename)):
