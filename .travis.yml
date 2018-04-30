@@ -7,6 +7,7 @@ python:
 install:
   - pip install lxml
   - pip install cssselect
+  - pip install pymongo
 
 script:
   - python tests.py
