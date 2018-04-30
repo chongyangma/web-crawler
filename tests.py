@@ -13,6 +13,3 @@ if __name__ == '__main__':
     scrape_callback.link_crawler('http://example.webscraping.com/',
                                  '/(places/default/index)',
                                  scrape_callback=ScrapeCallback())
-
-    urls = alexa_fn.alexa()
-    print(len(urls))
