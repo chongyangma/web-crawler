@@ -2,11 +2,15 @@ language: python
 
 python:
   - "2.7"
-  - "3.6"
+  # - "3.6"
 
 install:
   - pip install lxml
   - pip install cssselect
+  - pip install pymongo
 
 script:
   - python tests.py
+  - cd scripts
+  - python alexa_fn.py
+  - time python threaded_test.py 5
